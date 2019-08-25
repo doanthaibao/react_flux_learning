@@ -25,7 +25,7 @@ const ManageCoursePage = props => {
     }
     return () => courseStore.removeChangeListener(onChange);
   }, [courses.length, props.match.params.slug]); //!Important to avoid request multiple times
-
+  //user effect only run when courses.length or props.match.params.slug variable is changed
   function onChange() {
     setCourses(courseStore.getCourses());
   }
